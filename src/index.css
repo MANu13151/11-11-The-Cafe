@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  --color-mocha: #432F2E;
+  --color-mocha-light: #5A3E3D;
+  --color-mocha-deep: #2A1D1C;
+  --color-sky: #C1DBE8;
+  --color-sky-soft: #D7E8F0;
+  --color-custard: #FFF0B5;
+  --color-custard-warm: #FFE88C;
+  --color-ivory: #FCFBF7;
+  --color-ivory-warm: #F4F1E8;
+}
+
+@layer base {
+  body {
+    background-color: #FCFBF7;
+    color: #432F2E;
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Tactile micro-interactions (Emil Kowalski style) */
+.btn-press {
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-press:hover {
+  transform: translateY(-1px);
+}
+.btn-press:active {
+  transform: scale(0.97) translateY(0);
+}
+
+/* Subtle neo-bistro border styles */
+.bistro-card {
+  border: 1.5px solid #432F2E;
+  box-shadow: 3px 3px 0px #432F2E;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.bistro-card:hover {
+  box-shadow: 5px 5px 0px #432F2E;
+  transform: translateY(-2px);
+}
+
+.bistro-badge {
+  border: 1px solid #432F2E;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FCFBF7;
+}
+::-webkit-scrollbar-thumb {
+  background: #C1DBE8;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #432F2E;
+}
